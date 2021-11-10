@@ -96,7 +96,7 @@ function Car(model, milesPerGallon) {
 Car.prototype.fill = function (gallons) {
   return (this.tank += gallons);
 };
-const honda = new Car("Honda", 30);
+// const honda = new Car("Honda", 30);
 // console.log(honda.fill(40));
 // console.log(honda);
 
@@ -112,6 +112,7 @@ function Baby(name, age, favoriteToy) {
   this.favoriteToy = favoriteToy;
 }
 Baby.prototype = Object.create(Person.prototype);
+
 Baby.prototype.play = function () {
   return `Playing with ${this.favoriteToy}`;
 };
@@ -120,10 +121,14 @@ Baby.prototype.play = function () {
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window Binding- this is when we bind the word this to our object. We have to make it contextual in order to work.
+  2. Implicit binding- This is when we bind the methods to our objects so whatever it is to the left will refer to this
+  3. Explicit Binding- Explicit is different that Implicit in which here we tell the function what the 'this' keyword will be using call, apply or bind. Ex.speak.bind(myDog)
+  4. New Binding - This is when a function is invoked as a constructor function. "this" refers to the new object
+  Ex. function Dog(name, woof){
+    this.name =  name;
+    this.woof = woof;
+  }
 */
 
 ///////// END OF CHALLENGE /////////
